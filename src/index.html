@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="ufc-news-app">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{ consts.appName }}</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Boostrap CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+        <a class="navbar-brand" style="color: white" href="#"><span class="glyphicon glyphicon-fire" style="color: red" ></span> Lab</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="cursos.lista">Cursos</a></li>
+          <li><a ui-sref="professores.lista">Professores</a></li>
+          <li><a ui-sref="alunos.lista">Alunos</a></li>
+        </ul>
+        <!-- 
+                      <ul class="nav navbar-nav navbar-right">
+                          <li><a href="#">Bem vindo <b>{{usuario.nome}}</b></a></li>
+                           <li><a ng-click="logout()">Sair</a></li>
+                      </ul>
+                    -->
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12" ng-show="mensagem">
+        <div class="panel panel-danger">
+          <div class="panel-body bg-danger text-center">
+            <span class="glyphicon glyphicon-remove pull-right" ng-click="fechar()"></span> {{mensagem}}
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div ui-view></div>
+  </div>
+
+  <!-- Jquery -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+
+  <!-- Angular -->
+  <script src="../vendor/angular/angular.min.js"></script>
+  <script src="../vendor/angular-ui-router/angular-ui-router.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- App -->
+  <script src="./index.js"></script>
+  <script src="./app.routes.js"></script>
+
+  <!-- Constants -->
+  <script src="../src/config/consts.js"></script>
+
+
+</body>
+
+</html>
