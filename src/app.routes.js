@@ -8,8 +8,8 @@ angular.module('ufc-news-app').config([
     $stateProvider
       .state('ufc', {
         url: '/ufc',
-        abstract: true,
-        templateUrl: 'src/app/containers/home/home.html',
+        templateUrl: 'app/containers/home/home.html',
+        // template: '<h2>Teste</h2>',
       })
   }
 ]);

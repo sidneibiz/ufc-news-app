@@ -11,10 +11,8 @@
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
-<body>
+<body ng-controller="homeController">
   <div class="container">
-    <div class="row">
-    </div>
     <div ui-view></div>
   </div>
 
@@ -35,6 +33,11 @@
   <!-- Constants -->
   <script src="../src/config/consts.js"></script>
 
+  <!-- Controllers -->
+  <script src="../src/app/containers/home/home.controller.js"></script>
+
+  <!-- Services -->
+  <script src="../src/app/services/ufc.service.js"></script>
 
 </body>
 
