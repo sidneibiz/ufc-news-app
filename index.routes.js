@@ -1,4 +1,4 @@
-angular.module('ufc-news-app').config([
+angular.module('ufcNewsApp').config([
   '$stateProvider',
   '$urlRouterProvider',
   ($stateProvider, $urlRouterProvider) => {

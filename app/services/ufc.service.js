@@ -1,4 +1,4 @@
-angular.module('ufc-news-app').service('ufcService', [
+angular.module('ufcNewsApp').service('ufcService', [
   '$http',
   'consts',
   UFCService
@@ -6,10 +6,14 @@ angular.module('ufc-news-app').service('ufcService', [
 
 function UFCService($http, consts) {
 
+  const getNews = (params) => get('news', params);
+  const getFighters = (params) => get('fighters', params);
+  const getEvents = (params) => get('events', params);
+
   const get = (url, params) => {
     if (params) return $http.get(`${consts.apiURL}/${url}/${params}`);
-    else return $http.get(`${consts.apiURL}/${url}/`);
+    return $http.get(`${consts.apiURL}/${url}/`);
   };
 
-  return { get };
+  return { getNews, getFighters };
 }

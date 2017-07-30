@@ -1,3 +1,3 @@
-angular.module('ufc-news-app').component('navbar', {
+angular.module('ufcNewsApp').component('navbar', {
   'templateUrl': 'app/components/navbar/navbar.html'
 });

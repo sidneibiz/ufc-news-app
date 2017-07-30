@@ -1,0 +1,9 @@
+<div class="input-group">
+  <input type="text" class="form-control" ng-model="vm.model.text" placeholder="{{vm.placeholder}}">
+  <div class="input-group-btn">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{vm.model.selected || vm.placeholderButton}} <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li ng-repeat="value in vm.items" ng-click="vm.model.selected = value"><a>{{value}}</a></li>
+    </ul>
+  </div>
+</div>

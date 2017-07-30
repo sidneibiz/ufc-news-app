@@ -1,4 +1,4 @@
-angular.module('ufc-news-app').constant('consts', {
+angular.module('ufcNewsApp').constant('consts', {
   appName: 'UFC News',
   version: '0.1.0',
   year: '2017',

@@ -1,5 +1,5 @@
-angular.module('ufc-news-app')
-  .controller('fightersController', [
+angular.module('ufcNewsApp')
+  .controller('FightersController', [
     '$scope',
     'ufcService',
     FightersController
@@ -8,7 +8,16 @@ angular.module('ufc-news-app')
 function FightersController($scope, ufcService) {
   const vm = this;
 
-  vm.fighters = [];
+  vm.$onInit = function () {
+    vm.fighters = [];
+    vm.search = {};
+    ufcService.getFighters().then(res => {
+      vm.fighters = res.data;
+      vm.class = vm.fighters.reduce((types, classe) => types.includes(classe.weight_class) ? types : types.push(classe.weight_class) && types, []).sort();
+    });
+  }
 
-  ufcService.get('fighters').then(res => vm.fighters = res.data);
+  vm.viewDetail = function (item) {
+    console.log('videDetail');
+  };
 }

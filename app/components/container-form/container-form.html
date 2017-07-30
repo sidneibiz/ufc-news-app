@@ -1,0 +1,35 @@
+<div class="col-xs-12 col-sm-9">
+  <br>
+  <div class="jumbotron col-md-12" ng-if="vm.type == 'detail'">
+    <div class="col-md-6">
+      <img src="{{vm.primary.thumbnail}}" alt="{{vm.primary.url_name}}">
+    </div>
+    <div class="col-md-6">
+      <h3>{{vm.primary.title}}</h3>
+      <p>{{vm.primary.author}}</p>
+      <button type="button" ng-repeat="btn in vm.buttons" class="btn {{btn.class}} btn-detail" ng-click="btn.action()" role="button">{{btn.name}}</button>
+    </div>
+  </div>
+  <div class="jumbotron col-md-12" ng-if="vm.type == 'filter'">
+    <div class="row">
+      <div class="col-md-12">
+        <input-list placeholder-button="{{vm.placeholderButton}}" placeholder="{{vm.placeholder}}" items="vm.inputList" model="vm.model"></input-list>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer col-md-12">
+    <div ng-if="vm.type == 'detail'" class="col-md-4 items image-thumbnail" ng-repeat="item in vm.values">
+      <img class="image" src="{{item.thumbnail}}" alt="{{item.url_name}}">
+      <div class="middle" ng-click="vm.viewDetail(item)">
+        <div class="text">View Details</div>
+      </div>
+    </div>
+    <div ng-if="vm.model.text || vm.model.selected" class="col-md-4 items image-thumbnail" ng-repeat="item in vm.values | filter:{first_name:vm.model.text, weight_class:vm.model.selected }">
+      <img class="image" src="{{item.thumbnail}}" alt="{{item.url_name}}">
+      <div class="middle" ng-click="vm.viewDetail(item)">
+        <div class="text">View Details</div>
+      </div>
+    </div>
+    <h2 ng-if="!(vm.model.text || vm.model.selected)">Filter Please!</h2>
+  </div>
+</div>

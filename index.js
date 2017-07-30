@@ -1,1 +1,1 @@
-angular.module('ufc-news-app', ['ui.router']);
+angular.module('ufcNewsApp', ['ui.router']);

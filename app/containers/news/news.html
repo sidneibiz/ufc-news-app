@@ -1,26 +1,3 @@
-<div class="container-fluid" ng-controller="newsController as vm">
-  <div class="col-xs-12 col-sm-9">
-    <br>
-    <div class="jumbotron col-md-12">
-      <div class="col-md-6">
-        <img src="{{vm.primary.thumbnail}}" alt="{{vm.primary.url_name}}">
-      </div>
-      <div class="col-md-6">
-        <h3>{{vm.primary.title}}</h3>
-        <p>{{vm.primary.author}}</p>
-        <p>
-          <a href="#" class="btn btn-primary" role="button">Fighter</a>
-          <a href="#" class="btn btn-default" role="button">Videos</a>
-        </p>
-      </div>
-    </div>
-    <div class="panel-footer col-md-12">
-      <div class="col-md-4 items image-thumbnail" ng-repeat="item in vm.news">
-        <img class="image" src="{{item.thumbnail}}" alt="{{item.url_name}}">
-        <div class="middle" href="#news" ng-click="vm.viewDetail(item)">
-          <div class="text">View Details</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container-fluid" ng-controller="NewsController as vm">
+  <container-form type="detail" primary="vm.primary" values="vm.news" view-detail="vm.viewDetail" buttons="vm.buttons"></container-form>
 </div>
