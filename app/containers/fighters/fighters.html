@@ -1,0 +1,6 @@
+<div class="container-fluid" ng-controller="fightersController as vm">
+  <input ng-model="vm.model">
+  <div ng-repeat="item in vm.fighters | filter:vm.model">
+    <h1>{{item.first_name}}</h1>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+.main-footer {
+  position: fixed; bottom:0px; width: 100%
+}
+
+.img-navbar {
+  max-width: 45px;
+  max-height: 40px;
+  margin-top: -10px;
+  margin-left: -5px;
+}
+
+.navbar {
+  background: linear-gradient(50deg, #081026 0%, #4d0201 60%, #b70808 100%);
+  color: #ffffff;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  border: 0;
+}
+
+.panel-body {
+  border-left: 10px solid;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+
+.panel-body {
+  border-left-color: #b70808;
+}
+
+.sidebar-wrapper {
+  z-index: 900;
+  position: fixed;
+  left: 250px;
+  width: 200px;
+  height: 100%;
+  margin-left: -250px;
+  background: #ffffff;
+  padding:15px;
+  padding-top: 55px;
+}
+
+.home {
+  padding-left: 130px; 
+  margin-left: 100px;
+  padding-top: 40px;
+}
+
+.jumbotron div>img {
+  width: 350px;
+  margin-left: -50px;
+  margin-top: -20px;
+  border-radius: 10px;
+}
+
+.items {
+  margin-left: -7px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 250px;
+  height: 200px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  padding: 5px;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.image-thumbnail:hover .image {
+  opacity: 0.3;
+}
+
+.image-thumbnail:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #b70808;
+  color: white;
+  font-size: 16px;
+  padding: 15px 15px; 
+  margin-left: 7px;
+}

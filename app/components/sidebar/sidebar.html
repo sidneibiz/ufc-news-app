@@ -1,0 +1,11 @@
+<div class="sidebar-wrapper">
+  <ul class="nav">
+    <li><a ng-class="{'panel-body' : vm.selected == 'news'}" ng-click="vm.click('news')" ui-sref="news">News</a></li>
+    <li><a ng-class="{'panel-body' : vm.selected == 'events'}" ng-click="vm.click('events')" ui-sref="events">Events</a></li>
+    <li><a ng-class="{'panel-body' : vm.selected == 'fighters'}" ng-click="vm.click('fighters')" ui-sref="fighters">Fighters</a></li>
+    <li><a ng-class="{'panel-body' : vm.selected == 'tickets'}" ng-click="vm.click('tickets')" ui-sref="tickets">Tickets</a></li>
+    <li class="nav-divider"></li>
+    <li><a ng-class="{'panel-body' : vm.selected == 'photos'}" ng-click="vm.click('photos')" ui-sref="news">Photos</a></li>
+    <li><a ng-class="{'panel-body' : vm.selected == 'videos'}" ng-click="vm.click('videos')" ui-sref="news">Videos</a></li>
+  </ul>
+</div>
