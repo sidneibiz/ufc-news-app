@@ -2,6 +2,10 @@
   position: fixed; bottom:0px; width: 100%
 }
 
+body {
+  background-color: #fff !important;
+}
+
 /* navbar */
 
 .img-navbar {
@@ -43,7 +47,12 @@
   background: #ffffff;
   padding:15px;
   padding-top: 55px;
+  font-size: 14px!important;
 }
+.sidebar-item {
+  color: #c41230 !important;
+}
+
 
 /* container */
 
@@ -111,4 +120,17 @@
 
 .dropdown-menu {
   cursor: pointer;
+}
+
+
+div.fighter-detail {
+  margin-left: 200px !important;
+}
+
+.desc {
+  font-size: 11px;
+}
+
+.feature-img {
+  height: 330px;
 }

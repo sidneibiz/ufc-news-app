@@ -24,12 +24,12 @@
         <div class="text">View Details</div>
       </div>
     </div>
-    <div ng-if="vm.model.text || vm.model.selected" class="col-md-4 items image-thumbnail" ng-repeat="item in vm.values | filter:{first_name:vm.model.text, weight_class:vm.model.selected }">
+    <div ng-if="vm.model.text || vm.model.selected && vm.type == 'filter'" class="col-md-4 items image-thumbnail" ng-repeat="item in vm.values | filter:{first_name:vm.model.text, weight_class:vm.model.selected }">
       <img class="image" src="{{item.thumbnail}}" alt="{{item.url_name}}">
       <div class="middle" ng-click="vm.viewDetail(item)">
         <div class="text">View Details</div>
       </div>
     </div>
-    <h2 ng-if="!(vm.model.text || vm.model.selected)">Filter Please!</h2>
+    <h2 ng-if="!(vm.model.text || vm.model.selected) && vm.type == 'filter'">Filter Please!</h2>
   </div>
 </div>

@@ -1,14 +1,17 @@
 angular.module('ufcNewsApp')
   .controller('NewsController', [
     '$window',
+    '$state',
+    '$rootScope',
     'ufcService',
     NewsController
   ]);
 
-function NewsController($window, ufcService) {
+function NewsController($window, $state, $rootScope, ufcService) {
   const vm = this;
 
   vm.$onInit = function () {
+    $rootScope.$broadcast("news");
     vm.news = [];
     ufcService.getNews().then(res => {
       vm.news = res.data;
@@ -19,12 +22,8 @@ function NewsController($window, ufcService) {
     });
 
     vm.buttons = [{
-      name: 'Videos',
-      action: vm.action,
-      class: 'btn-detail'
-    }, {
-      name: 'Fighter',
-      action: vm.action,
+      name: 'Fighters',
+      action: vm.goFighters,
       class: 'btn-detail'
     }];
   }
@@ -35,7 +34,7 @@ function NewsController($window, ufcService) {
     $window.scrollTo(0, 0);
   };
 
-  vm.action = function () {
-    console.log('funciona carai');
+  vm.goFighters = function () {
+    $state.go('fighters');
   };
 }

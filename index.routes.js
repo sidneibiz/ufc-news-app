@@ -12,7 +12,7 @@ angular.module('ufcNewsApp').config([
       })
       .state('events', {
         url: '/events',
-        templateUrl: 'app/containers/home/home.html',
+        templateUrl: 'app/containers/events/events.html',
       })
       .state('fighters', {
         url: '/fighters',
@@ -20,7 +20,20 @@ angular.module('ufcNewsApp').config([
       })
       .state('tickets', {
         url: '/tickets',
-        templateUrl: 'app/containers/home/home.html',
+        templateUrl: 'app/containers/tickets/tickets.html',
+        params: {
+          id: undefined
+        },
       })
+      .state('fighters-detail', {
+        url: '/fighters-detail',
+        templateUrl: 'app/containers/fighters/fighter-detail.html',
+        params: {
+          id: undefined
+        },
+        onEnter: ($state, $stateParams) => {
+          if (!$stateParams.id) return $state.transitionTo('fighters');
+        }
+      });
   }
 ]);

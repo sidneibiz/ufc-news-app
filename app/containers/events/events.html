@@ -1,4 +1,42 @@
-<div class="container-fluid" ng-controller="FightersController as vm">
-  <container-form type="filter" values="vm.fighters" input="vm.input" view-detail="vm.viewDetail" input-list="vm.class" model="vm.search"
-    placeholder="Filter" placeholder-button="Class"></container-form>
+<div class="container-fluid" ng-controller="EventsController as vm">
+  <div class="col-xs-12 col-sm-9">
+    <br>
+    <div class="panel-body">{{vm.primary.base_title || 'Filter Please!'}}</div>
+    <div class="jumbotron col-md-12">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-addon" id="sizing-addon3"><i class="glyphicon glyphicon-pushpin"></i></span>
+          <input type="text" ng-model="vm.model.subtitle" class="form-control" placeholder="Description Event">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-addon" id="sizing-addon3"><i class="glyphicon glyphicon-globe desc"></i></span>
+          <input type="text" class="form-control" ng-model="vm.model.locale" placeholder="Locale">
+        </div>
+      </div>
+    </div>
+    <div class="jumbotron col-md-12" ng-if="vm.primary">
+      <div class="col-md-6">
+        <img src="{{vm.primary.feature_image}}" class="feature-img" alt="{{vm.primary.url_name}}">
+      </div>
+      <div class="col-md-6">
+        <h3>{{vm.primary.subtitle}}</h3>
+        <p><i class="glyphicon glyphicon-globe desc"></i> {{vm.primary.arena}} {{vm.primary.location}}</p>
+        <p><i class="glyphicon glyphicon-pushpin desc"></i> {{vm.primary.title_tag_line}}</p>
+        <p><i class="glyphicon glyphicon-calendar desc"></i> {{vm.event_date}}</p>
+        <p><i class="glyphicon glyphicon-usd desc"></i> {{vm.primary.ticket_general_sale_text}}</p>
+        <button type="button" class="btn btn-detail" ng-click="vm.tickets(vm.primary)" role="button">More</button>
+      </div>
+    </div>
+    <div class="panel-footer col-md-12">
+      <div ng-if="(vm.model.locale || vm.model.subtitle)" class="col-md-4 items image-thumbnail" ng-repeat="item in vm.events | filter:vm.model.locale | filter:vm.model.subtitle">
+        <img class="image" src="{{item.feature_image}}">
+        <div class="middle" ng-click="vm.viewDetail(item)">
+          <div class="text">View Details</div>
+        </div>
+      </div>
+      <h2 ng-if="!(vm.model.locale || vm.model.subtitle)">Filter Please!</h2>
+    </div>
+  </div>
 </div>

@@ -1,14 +1,16 @@
 angular.module('ufcNewsApp')
   .controller('FightersController', [
-    '$scope',
+    '$state',
+    '$rootScope',
     'ufcService',
     FightersController
   ]);
 
-function FightersController($scope, ufcService) {
+function FightersController($state, $rootScope, ufcService) {
   const vm = this;
 
   vm.$onInit = function () {
+    $rootScope.$broadcast("fighters");
     vm.fighters = [];
     vm.search = {};
     ufcService.getFighters().then(res => {
@@ -18,6 +20,8 @@ function FightersController($scope, ufcService) {
   }
 
   vm.viewDetail = function (item) {
-    console.log('videDetail');
+    $state.go('fighters-detail', {
+      id: item.id
+    });
   };
 }
