@@ -18,12 +18,20 @@
     </div>
   </div>
   <div class="panel-footer col-md-12">
-    <div ng-if="vm.type == 'detail'" class="col-md-4 items image-thumbnail" ng-repeat="item in vm.values">
+    <div ng-if="vm.type == 'detail'" class="col-md-4 image-banner" ng-repeat="item in vm.values">
       <img class="image" src="{{item.thumbnail}}" alt="{{item.url_name}}">
-      <div class="middle" ng-click="vm.viewDetail(item)">
-        <div class="text">View Details</div>
+      <div class="banner-description" ng-click="vm.viewDetail(item)">
+        <!-- <div class="text">View Details</div> -->
+        <p>Image</p>
+
       </div>
     </div>
+    <!-- <div ng-if="vm.type == 'detail'" class="col-md-4 items image-thumbnail" ng-repeat="item in vm.values">
+      <img class="image" src="{{item.thumbnail}}" alt="{{item.url_name}}">
+       <div class="middle" ng-click="vm.viewDetail(item)">
+        <div class="text">View Details</div>
+      </div> 
+    </div>  -->
     <div ng-if="vm.model.text || vm.model.selected && vm.type == 'filter'" class="col-md-4 items image-thumbnail" ng-repeat="item in vm.values | filter:{first_name:vm.model.text, weight_class:vm.model.selected }">
       <img class="image" src="{{item.thumbnail}}" alt="{{item.url_name}}">
       <div class="middle" ng-click="vm.viewDetail(item)">
