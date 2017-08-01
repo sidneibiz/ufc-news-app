@@ -4,7 +4,7 @@
 Permite passar uma lista de dados para apresentar em um dropDown ao lado do input de texto.
 Dessa forma torna o filtro mais prático e mais limpo.
 
-Em meu caso utilizei para poder trazer as "Classes(Pesos) dos lutadores, e poder filtrar por nome ao mesmo tempo."
+Em meu caso utilizei para poder trazer as "Classes(Pesos)" dos lutadores, e poder filtrar por nome ao mesmo tempo."
 
 ## Contributors
 
